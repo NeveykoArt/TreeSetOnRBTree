@@ -1,0 +1,42 @@
+---
+Checks: '
+  clang-diagnostic-*,
+  clang-analyzer-*,
+  *,
+  -fuchsia-*,
+  -llvmlibc-*,
+  -llvm-header-guard,
+  -modernize-use-nodiscard,
+  -modernize-use-trailing-return-type,
+  -cppcoreguidelines-owning-memory,
+  -google-runtime-references,
+  -cppcoreguidelines-pro-bounds-pointer-arithmetic,
+  -cppcoreguidelines-avoid-magic-number,
+  -readability-magic-numbers,
+  -bugprone-exception-escape,
+  -altera-*,
+  -cppcoreguidelines-pro-type-member-init,
+  -hicpp-member-init,
+  -bugprone-easily-swappable-parameters,
+  -modernize-loop-convert,
+  -cppcoreguidelines-avoid-non-const-global-variables,
+  -cppcoreguidelines-avoid-magic-numbers,
+  -cppcoreguidelines-avoid-c-arrays,
+  -hicpp-avoid-c-arrays,
+  -modernize-avoid-c-arrays,
+  -readability-isolate-declaration,
+  -readability-convert-member-functions-to-static,
+  -google-runtime-int,
+  -cert-err58-cpp,
+  -cppcoreguidelines-pro-bounds-constant-array-index,
+  -readability-simplify-boolean-expr,
+  -concurrency-mt-unsafe
+  '
+WarningsAsErrors: true
+HeaderFilterRegex: '.*/(ftslib|app)/'
+AnalyzeTemporaryDtors: false
+FormatStyle:     file
+CheckOptions:
+  - key:   cppcoreguidelines-explicit-virtual-functions.IgnoreDestructors
+    value: '1'
+...
